@@ -1,0 +1,41 @@
+﻿<Window x:Class="SpriteSheetSlicer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpriteSheetSlicer"
+        mc:Ignorable="d"
+        Title="Sprite Sheet Slicer" Height="800" Width="600">
+    <Grid x:Name="root" Visibility="Visible">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition x:Name="imageContainer"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+        
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Label Content="Sprite Width" />
+                <TextBox Name="spriteSlicedWidth" Width="200" Height="30" TextChanged="SpriteWidth_TextChanged"/>
+
+                <Label Content="Sprite Height" />
+                <TextBox Name="spriteSlicedHeight" Width="200" Height="30" TextChanged="SpriteHeight_TextChanged"/>
+                <TextBlock Name="test">Test</TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Width="100" HorizontalAlignment="Center" Margin="0 10 50 10" Name="btnLoad" Click="BtnLoad_Click">Load Spritesheet...
+                </Button>
+                <Button Width="130" HorizontalAlignment="Center" Margin="200 10 0 10" Name="btnSave" Click="BtnSave_Click">Save Spliced Images...</Button>
+            </StackPanel>
+        </StackPanel>
+        <Image Grid.Row="2" Name="spriteSheet" Width="Auto">
+            <Image.RenderTransform>
+                <TranslateTransform X="0" Y="0" />
+            </Image.RenderTransform>
+        </Image>
+
+    </Grid>
+</Window>
